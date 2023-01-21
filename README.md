@@ -2,7 +2,7 @@
 
 ## Objective
 
-- Develop a frontend application to consume the Github API
+- Develop a frontend Angular application to consume the Github API
 
 ## Routes
 
