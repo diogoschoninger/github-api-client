@@ -1,0 +1,21 @@
+<form>
+  <input type="text" name="q" />
+
+  <button type="submit">Search</button>
+</form>
+
+<div *ngIf="params.q">
+  <div>
+    <ul>
+      <li><a href="/search?q={{params.q}}&type=repositories">Repositories</a></li>
+      <li><a href="/search?q={{params.q}}&type=commits">Commits</a></li>
+      <li><a href="/search?q={{params.q}}&type=issues">Issues</a></li>
+      <li><a href="/search?q={{params.q}}&type=discussions">Discussions</a></li>
+      <li><a href="/search?q={{params.q}}&type=packages">Packages</a></li>
+      <li><a href="/search?q={{params.q}}&type=marketplace">Marketplace</a></li>
+      <li><a href="/search?q={{params.q}}&type=topics">Topics</a></li>
+      <li><a href="/search?q={{params.q}}&type=wikis">Wikis</a></li>
+      <li><a href="/search?q={{params.q}}&type=users">Users</a></li>
+    </ul>
+  </div>
+</div>
