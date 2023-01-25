@@ -1,21 +1,24 @@
-<form>
-  <input type="text" name="q" />
+<div class="container">
+  <form [formGroup]="form">
+    <div class="row">
+      <input formControlName="query" class="form-control col" placeholder="Search on Github" />
 
-  <button type="submit">Search</button>
-</form>
+      <button type="submit" class="btn btn-primary col-auto ms-3" (click)="onSubmit()">Search</button>
+    </div>
+  </form>
 
-<div *ngIf="params.q">
-  <div>
-    <ul>
-      <li><a href="/search?q={{params.q}}&type=repositories">Repositories</a></li>
-      <li><a href="/search?q={{params.q}}&type=commits">Commits</a></li>
-      <li><a href="/search?q={{params.q}}&type=issues">Issues</a></li>
-      <li><a href="/search?q={{params.q}}&type=discussions">Discussions</a></li>
-      <li><a href="/search?q={{params.q}}&type=packages">Packages</a></li>
-      <li><a href="/search?q={{params.q}}&type=marketplace">Marketplace</a></li>
-      <li><a href="/search?q={{params.q}}&type=topics">Topics</a></li>
-      <li><a href="/search?q={{params.q}}&type=wikis">Wikis</a></li>
-      <li><a href="/search?q={{params.q}}&type=users">Users</a></li>
-    </ul>
+  <div *ngIf="loading">
+    Carregando...
+  </div>
+
+  <div *ngIf="error">
+    {{ error }}
+  </div>
+
+  <div *ngIf="results">
+    <div *ngFor="let result of results">
+      <h5>{{result.name}}</h5>
+      <h6>Owner: {{result.owner.login}}</h6>
+    </div>
   </div>
 </div>
