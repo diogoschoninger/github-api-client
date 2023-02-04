@@ -1,24 +1,18 @@
-<div class="container">
-  <form [formGroup]="form">
-    <div class="row">
-      <input formControlName="query" class="form-control col" placeholder="Search on Github" />
+<form [formGroup]="form">
+  <input formControlName="query" placeholder="Search on Github" />
 
-      <button type="submit" class="btn btn-primary col-auto ms-3" (click)="onSubmit()">Search</button>
-    </div>
-  </form>
+  <button type="submit" (click)="onSubmit()">Search</button>
+</form>
 
-  <div *ngIf="loading">
-    Carregando...
-  </div>
+<div *ngIf="loading">Carregando...</div>
 
-  <div *ngIf="error">
-    {{ error }}
-  </div>
+<div *ngIf="error">
+  {{ error }}
+</div>
 
-  <div *ngIf="results">
-    <div *ngFor="let result of results">
-      <h5>{{result.name}}</h5>
-      <h6>Owner: {{result.owner.login}}</h6>
-    </div>
+<div *ngIf="results">
+  <div *ngFor="let result of results">
+    <h5>{{ result.name }}</h5>
+    <h6>Owner: {{ result.owner.login }}</h6>
   </div>
 </div>
