@@ -1,21 +1,20 @@
-<div class="max-w-[1012px] mx-auto">
-  <form
-    [formGroup]="form"
-    class="text-[14px] leading-[21px] m-[40px] p-[40px] flex-row"
-  >
-    <input
-      formControlName="query"
-      placeholder="Search on Github"
-      class="appearance-none bg-[#0d1117] font-[400] border border-solid border-[#30363d] px-3 text-start py-[5px] leading-5"
-    />
+<div class="mx-auto max-w-[1012px]">
+  <form [formGroup]="form" class="m-[40px] p-[40px] text-[14px] leading-[21px]">
+    <div class="flex flex-row justify-center">
+      <input
+        formControlName="query"
+        placeholder="Search Github"
+        class="flex-1 rounded-md border border-solid border-[#30363d] bg-[#0d1117] px-3 py-[5px] font-[400] outline-none outline-[#58a6ff]"
+      />
 
-    <button
-      type="submit"
-      (click)="onSubmit()"
-      class="bg-[#21262d] border border-solid border-[#f0f6fc1a] font-[500] ml-2 px-4 py-[5px]"
-    >
-      Search
-    </button>
+      <button
+        type="submit"
+        (click)="onSubmit()"
+        class="ml-2 rounded-md border border-solid border-[#f0f6fc1a] bg-[#21262d] px-4 py-[5px] font-[500]"
+      >
+        Search
+      </button>
+    </div>
   </form>
 
   <div *ngIf="loading">Carregando...</div>
